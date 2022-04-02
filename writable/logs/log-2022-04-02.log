@@ -1,0 +1,102 @@
+CRITICAL - 2022-04-02 20:36:25 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp\htdocs\antzeincompany\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp\htdocs\antzeincompany\public\index.php(28): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-04-02 20:36:30 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(219): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(177): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\xampp\htdocs\antzeincompany\system\bootstrap.php(146): CodeIgniter\CodeIgniter->initialize()
+#3 C:\xampp\htdocs\antzeincompany\public\index.php(28): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-04-02 20:45:07 --> Error connecting to the database: Unknown database 'javawebmedia_webci4'
+CRITICAL - 2022-04-02 20:45:07 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'javawebmedia_webci4'
+#0 C:\xampp\htdocs\antzeincompany\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\antzeincompany\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\antzeincompany\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\antzeincompany\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\antzeincompany\app\Models\Konfigurasi_model.php(17): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\antzeincompany\app\Controllers\Home.php(19): App\Models\Konfigurasi_model->listing()
+#6 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-04-02 21:15:42 --> syntax error, unexpected '}'
+#0 C:\xampp\htdocs\antzeincompany\system\Router\Router.php(176): CodeIgniter\Router\Router->autoRoute('login/lupa')
+#1 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(718): CodeIgniter\Router\Router->handle('login/lupa')
+#2 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(359): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-02 21:32:08 --> Undefined variable: user
+#0 C:\xampp\htdocs\antzeincompany\app\Controllers\Login.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Login->forget()
+#2 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-02 21:32:29 --> Trying to access array offset on value of type bool
+#0 C:\xampp\htdocs\antzeincompany\app\Controllers\Login.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Login->forget()
+#2 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-02 21:33:15 --> Undefined index: nama
+#0 C:\xampp\htdocs\antzeincompany\app\Controllers\Login.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Login->forget()
+#2 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-04-02 21:39:37 --> MySQL server has gone away
+CRITICAL - 2022-04-02 21:39:37 --> MySQL server has gone away
+#0 C:\xampp\htdocs\antzeincompany\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\antzeincompany\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\antzeincompany\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\antzeincompany\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\antzeincompany\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\antzeincompany\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\antzeincompany\app\Models\Konfigurasi_model.php(17): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\antzeincompany\app\Views\login\index.php(4): App\Models\Konfigurasi_model->listing()
+#8 C:\xampp\htdocs\antzeincompany\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#9 C:\xampp\htdocs\antzeincompany\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#10 C:\xampp\htdocs\antzeincompany\system\Common.php(1097): CodeIgniter\View\View->render('login/index', Array, true)
+#11 C:\xampp\htdocs\antzeincompany\app\Controllers\Login.php(57): view('login/index', Array)
+#12 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Login->index()
+#13 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#14 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#16 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2022-04-02 21:46:53 --> Trying to access array offset on value of type int
+#0 C:\xampp\htdocs\antzeincompany\app\Controllers\Admin\Staff.php(87): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 87, Array)
+#1 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Admin\Staff->index()
+#2 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Staff))
+#3 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-04-02 22:16:28 --> Undefined variable: row
+#0 C:\xampp\htdocs\antzeincompany\app\Views\admin\layout\menu.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\antzeincompany\app\Views\admin\layout\wrapper.php(12): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\antzeincompany\system\View\View.php(214): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\antzeincompany\system\View\View.php(217): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\antzeincompany\system\Common.php(1097): CodeIgniter\View\View->render('admin/layout/wr...', Array, true)
+#5 C:\xampp\htdocs\antzeincompany\app\Controllers\Admin\Akun.php(82): view('admin/layout/wr...', Array)
+#6 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Admin\Akun->index()
+#7 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Akun))
+#8 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#11 {main}
