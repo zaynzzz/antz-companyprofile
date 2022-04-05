@@ -13,18 +13,19 @@
 	<tbody>
 		<?php $no = 1;
 
-foreach ($user as $user) { ?>
-		<tr>
-			<td><?= $no ?></td>
-			<td><?= $user['nama'] ?></td>
-			<td><?= $user['username'] ?></td>
-			<td><?= $user['email'] ?></td>
-			<td><?= $user['akses_level'] ?></td>
-			<td>
-				<a href="<?= base_url('admin/user/edit/' . $user['id_user']) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-				<a href="<?= base_url('admin/user/delete/' . $user['id_user']) ?>" class="btn btn-dark btn-sm" onclick="confirmation(event)"><i class="fa fa-trash"></i></a>
-			</td>
-		</tr>
-		<?php $no++; } ?>
+		foreach ($user as $user) { ?>
+			<tr>
+				<td><?= $no ?></td>
+				<td><?= $user['nama'] ?></td>
+				<td><?= $user['username'] ?></td>
+				<td><?= $user['email'] ?></td>
+				<td><?= $user['akses_level'] ?></td>
+				<td>
+					<a href="<?= base_url('admin/user/edit/' . $user['id_user']) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
+					<a href="<?= base_url('admin/user/delete/' . $user['id_user']) ?>" class="btn btn-danger <?= ($user['username'] === 'zayn') ? "disabled" : ""; ?> btn-sm" onclick="confirmation(event)"><i class="fa fa-trash"></i></a>
+				</td>
+			</tr>
+		<?php $no++;
+		} ?>
 	</tbody>
 </table>

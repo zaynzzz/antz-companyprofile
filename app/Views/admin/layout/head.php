@@ -1,4 +1,6 @@
-<?php use App\Models\Konfigurasi_model;
+<?php
+
+use App\Models\Konfigurasi_model;
 
 $konfigurasi = new Konfigurasi_model();
 $site        = $konfigurasi->listing();
@@ -52,15 +54,16 @@ $site        = $konfigurasi->listing();
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
   <style type="text/css" media="screen">
-    .ui-timepicker-container{
-         z-index:1151 !important;
+    .ui-timepicker-container {
+      z-index: 1151 !important;
     }
   </style>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
-  <!-- Preloader -->
-  <!-- <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="<?= base_url('assets/upload/image/' . $site['icon']) ?>" alt="AdminLTELogo" height="60" width="60">
-  </div> -->
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="<?= base_url('assets/upload/image/' . $site['icon']) ?>" alt="antzeinLoading" height="60" width="60">
+    </div>

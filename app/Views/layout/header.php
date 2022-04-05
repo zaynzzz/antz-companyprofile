@@ -9,6 +9,7 @@ $site         = $konfigurasi->listing();
 $menu_berita  = $menu->berita();
 $menu_profil  = $menu->profil();
 $menu_layanan = $menu->layanan();
+// dd($menu_profil);
 ?>
 <!-- ======= Top Bar ======= -->
 <div id="topbar" class="bg-primary d-flex align-items-center fixed-top">
@@ -26,7 +27,7 @@ $menu_layanan = $menu->layanan();
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center">
 
-    <a href="index.html" class="logo me-auto"><img src="<?= base_url('assets/upload/image/' . $site['logo']) ?>" alt="<?= $site['namaweb'] ?>"><span class='fs-5 btn btn-dark mx-1'> <?= $site['namaweb'] ?></span></a>
+    <a href="index.html" class="logo me-auto"><img src="<?= base_url('assets/upload/image/' . $site['logo']) ?>" alt="<?= $site['namaweb'] ?>"></a>
     <!-- Uncomment below if you prefer to use an image logo -->
     <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 

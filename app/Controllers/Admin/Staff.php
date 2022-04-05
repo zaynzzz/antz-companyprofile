@@ -18,7 +18,7 @@ class Staff extends BaseController
         $kategori_staff   = $m_kategori_staff->listing();
 
         // Start validasi
-        if ($this->request->getMethod() === 'post' && $this->validate(
+        if ($this->request->getVar() && $this->validate(
             [
                 'nama' => 'required',
                 'gambar' => [
@@ -27,7 +27,7 @@ class Staff extends BaseController
                 ],
             ]
         )) {
-            if (! empty($_FILES['gambar']['name'])) {
+            if (!empty($_FILES['gambar']['name'])) {
                 // Image upload
                 $avatar   = $this->request->getFile('gambar');
                 $namabaru = str_replace(' ', '-', $avatar->getName());
@@ -39,20 +39,21 @@ class Staff extends BaseController
                     ->save(WRITEPATH . '../assets/upload/staff/thumbs/' . $namabaru);
                 // masuk database
                 // masuk database
-                $data = ['id_user'      => $this->session->get('id_user'),
-                    'id_kategori_staff' => $this->request->getPost('id_kategori_staff'),
-                    'urutan'            => $this->request->getPost('urutan'),
-                    'nama'              => $this->request->getPost('nama'),
-                    'jabatan'           => $this->request->getPost('jabatan'),
-                    'alamat'            => $this->request->getPost('alamat'),
-                    'telepon'           => $this->request->getPost('telepon'),
-                    'website'           => $this->request->getPost('website'),
-                    'email'             => $this->request->getPost('email'),
-                    'keahlian'          => $this->request->getPost('keahlian'),
+                $data = [
+                    'id_user'      => $this->session->get('id_user'),
+                    'id_kategori_staff' => $this->request->getVar('id_kategori_staff'),
+                    'urutan'            => $this->request->getVar('urutan'),
+                    'nama'              => $this->request->getVar('nama'),
+                    'jabatan'           => $this->request->getVar('jabatan'),
+                    'alamat'            => $this->request->getVar('alamat'),
+                    'telepon'           => $this->request->getVar('telepon'),
+                    'website'           => $this->request->getVar('website'),
+                    'email'             => $this->request->getVar('email'),
+                    'keahlian'          => $this->request->getVar('keahlian'),
                     'gambar'            => $namabaru,
-                    'status_staff'      => $this->request->getPost('status_staff'),
-                    'tempat_lahir'      => $this->request->getPost('tempat_lahir'),
-                    'tanggal_lahir'     => date('Y-m-d', strtotime($this->request->getPost('tanggal_lahir'))),
+                    'status_staff'      => $this->request->getVar('status_staff'),
+                    'tempat_lahir'      => $this->request->getVar('tempat_lahir'),
+                    'tanggal_lahir'     => date('Y-m-d', strtotime($this->request->getVar('tanggal_lahir'))),
                     'tanggal_post'      => date('Y-m-d H:i:s'),
                 ];
                 $m_staff->tambah($data);
@@ -62,20 +63,21 @@ class Staff extends BaseController
                 return redirect()->to(base_url('admin/staff'));
             }
             // masuk database
-            $data = ['id_user'      => $this->session->get('id_user'),
-                'id_kategori_staff' => $this->request->getPost('id_kategori_staff'),
-                'urutan'            => $this->request->getPost('urutan'),
-                'nama'              => $this->request->getPost('nama'),
-                'jabatan'           => $this->request->getPost('jabatan'),
-                'alamat'            => $this->request->getPost('alamat'),
-                'telepon'           => $this->request->getPost('telepon'),
-                'website'           => $this->request->getPost('website'),
-                'email'             => $this->request->getPost('email'),
-                'keahlian'          => $this->request->getPost('keahlian'),
+            $data = [
+                'id_user'      => $this->session->get('id_user'),
+                'id_kategori_staff' => $this->request->getVar('id_kategori_staff'),
+                'urutan'            => $this->request->getVar('urutan'),
+                'nama'              => $this->request->getVar('nama'),
+                'jabatan'           => $this->request->getVar('jabatan'),
+                'alamat'            => $this->request->getVar('alamat'),
+                'telepon'           => $this->request->getVar('telepon'),
+                'website'           => $this->request->getVar('website'),
+                'email'             => $this->request->getVar('email'),
+                'keahlian'          => $this->request->getVar('keahlian'),
                 // 'gambar'		=> $namabaru,
-                'status_staff'  => $this->request->getPost('status_staff'),
-                'tempat_lahir'  => $this->request->getPost('tempat_lahir'),
-                'tanggal_lahir' => date('Y-m-d', strtotime($this->request->getPost('tanggal_lahir'))),
+                'status_staff'  => $this->request->getVar('status_staff'),
+                'tempat_lahir'  => $this->request->getVar('tempat_lahir'),
+                'tanggal_lahir' => date('Y-m-d', strtotime($this->request->getVar('tanggal_lahir'))),
                 'tanggal_post'  => date('Y-m-d H:i:s'),
             ];
             $m_staff->tambah($data);
@@ -84,7 +86,8 @@ class Staff extends BaseController
 
             return redirect()->to(base_url('admin/staff'));
         }
-        $data = ['title'     => 'Data Staff: ' . $total['total'],
+        $data = [
+            'title'     => 'Data Staff: ' . $total,
             'staff'          => $staff,
             'kategori_staff' => $kategori_staff,
             'content'        => 'admin/staff/index',
@@ -111,7 +114,7 @@ class Staff extends BaseController
                 ],
             ]
         )) {
-            if (! empty($_FILES['gambar']['name'])) {
+            if (!empty($_FILES['gambar']['name'])) {
                 // Image upload
                 $avatar   = $this->request->getFile('gambar');
                 $namabaru = str_replace(' ', '-', $avatar->getName());
@@ -123,21 +126,22 @@ class Staff extends BaseController
                     ->save(WRITEPATH . '../assets/upload/staff/thumbs/' . $namabaru);
                 // masuk database
                 // masuk database
-                $data = ['id_staff'     => $id_staff,
+                $data = [
+                    'id_staff'     => $id_staff,
                     'id_user'           => $this->session->get('id_user'),
-                    'id_kategori_staff' => $this->request->getPost('id_kategori_staff'),
-                    'urutan'            => $this->request->getPost('urutan'),
-                    'nama'              => $this->request->getPost('nama'),
-                    'jabatan'           => $this->request->getPost('jabatan'),
-                    'alamat'            => $this->request->getPost('alamat'),
-                    'telepon'           => $this->request->getPost('telepon'),
-                    'website'           => $this->request->getPost('website'),
-                    'email'             => $this->request->getPost('email'),
-                    'keahlian'          => $this->request->getPost('keahlian'),
+                    'id_kategori_staff' => $this->request->getVar('id_kategori_staff'),
+                    'urutan'            => $this->request->getVar('urutan'),
+                    'nama'              => $this->request->getVar('nama'),
+                    'jabatan'           => $this->request->getVar('jabatan'),
+                    'alamat'            => $this->request->getVar('alamat'),
+                    'telepon'           => $this->request->getVar('telepon'),
+                    'website'           => $this->request->getVar('website'),
+                    'email'             => $this->request->getVar('email'),
+                    'keahlian'          => $this->request->getVar('keahlian'),
                     'gambar'            => $namabaru,
-                    'status_staff'      => $this->request->getPost('status_staff'),
-                    'tempat_lahir'      => $this->request->getPost('tempat_lahir'),
-                    'tanggal_lahir'     => date('Y-m-d', strtotime($this->request->getPost('tanggal_lahir'))),
+                    'status_staff'      => $this->request->getVar('status_staff'),
+                    'tempat_lahir'      => $this->request->getVar('tempat_lahir'),
+                    'tanggal_lahir'     => date('Y-m-d', strtotime($this->request->getVar('tanggal_lahir'))),
                 ];
                 $m_staff->edit($data);
                 // masuk database
@@ -146,21 +150,22 @@ class Staff extends BaseController
                 return redirect()->to(base_url('admin/staff'));
             }
             // masuk database
-            $data = ['id_staff'     => $id_staff,
+            $data = [
+                'id_staff'     => $id_staff,
                 'id_user'           => $this->session->get('id_user'),
-                'id_kategori_staff' => $this->request->getPost('id_kategori_staff'),
-                'urutan'            => $this->request->getPost('urutan'),
-                'nama'              => $this->request->getPost('nama'),
-                'jabatan'           => $this->request->getPost('jabatan'),
-                'alamat'            => $this->request->getPost('alamat'),
-                'telepon'           => $this->request->getPost('telepon'),
-                'website'           => $this->request->getPost('website'),
-                'email'             => $this->request->getPost('email'),
-                'keahlian'          => $this->request->getPost('keahlian'),
+                'id_kategori_staff' => $this->request->getVar('id_kategori_staff'),
+                'urutan'            => $this->request->getVar('urutan'),
+                'nama'              => $this->request->getVar('nama'),
+                'jabatan'           => $this->request->getVar('jabatan'),
+                'alamat'            => $this->request->getVar('alamat'),
+                'telepon'           => $this->request->getVar('telepon'),
+                'website'           => $this->request->getVar('website'),
+                'email'             => $this->request->getVar('email'),
+                'keahlian'          => $this->request->getVar('keahlian'),
                 // 'gambar'		=> $namabaru,
-                'status_staff'  => $this->request->getPost('status_staff'),
-                'tempat_lahir'  => $this->request->getPost('tempat_lahir'),
-                'tanggal_lahir' => date('Y-m-d', strtotime($this->request->getPost('tanggal_lahir'))),
+                'status_staff'  => $this->request->getVar('status_staff'),
+                'tempat_lahir'  => $this->request->getVar('tempat_lahir'),
+                'tanggal_lahir' => date('Y-m-d', strtotime($this->request->getVar('tanggal_lahir'))),
             ];
             $m_staff->edit($data);
             // masuk database
@@ -168,7 +173,8 @@ class Staff extends BaseController
 
             return redirect()->to(base_url('admin/staff'));
         }
-        $data = ['title'     => 'Edit Data Staff: ' . $staff['nama'],
+        $data = [
+            'title'     => 'Edit Data Staff: ' . $staff['nama'],
             'staff'          => $staff,
             'kategori_staff' => $kategori_staff,
             'content'        => 'admin/staff/edit',

@@ -1,0 +1,15 @@
+ERROR - 2022-04-03 14:33:31 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: NO)
+CRITICAL - 2022-04-03 14:33:31 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+#0 C:\xampp\htdocs\antzeincompany\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\antzeincompany\system\Database\BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\antzeincompany\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\antzeincompany\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\antzeincompany\app\Models\Konfigurasi_model.php(17): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\antzeincompany\app\Controllers\Home.php(19): App\Models\Konfigurasi_model->listing()
+#6 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(824): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#11 {main}
