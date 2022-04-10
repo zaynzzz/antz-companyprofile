@@ -1,0 +1,11 @@
+CRITICAL - 2022-04-10 17:48:09 --> unlink(C:\xampp\htdocs\antzeincompany\writable\debugbar/debugbar_1649587365.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp...', 'C:\\xampp\\htdocs...', 74, Array)
+#1 C:\xampp\htdocs\antzeincompany\system\Debug\Toolbar\Collectors\History.php(74): unlink('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\antzeincompany\system\Debug\Toolbar.php(483): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1649587688, 20)
+#3 C:\xampp\htdocs\antzeincompany\system\Debug\Toolbar.php(460): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 C:\xampp\htdocs\antzeincompany\app\Config\Events.php(48): CodeIgniter\Debug\Toolbar->respond()
+#5 C:\xampp\htdocs\antzeincompany\system\Events\Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#6 C:\xampp\htdocs\antzeincompany\system\CodeIgniter.php(300): CodeIgniter\Events\Events::trigger('pre_system')
+#7 C:\xampp\htdocs\antzeincompany\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\antzeincompany\index.php(7): require_once('C:\\xampp\\htdocs...')
+#9 {main}

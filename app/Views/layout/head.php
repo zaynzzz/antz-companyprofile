@@ -1,4 +1,6 @@
-<?php use App\Models\Konfigurasi_model;
+<?php
+
+use App\Models\Konfigurasi_model;
 
 $konfigurasi = new Konfigurasi_model();
 $site        = $konfigurasi->listing();
@@ -32,9 +34,11 @@ $site        = $konfigurasi->listing();
   <link href="<?= base_url() ?>/assets/template/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>/assets/template/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>/assets/template/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
   <!-- Template Main CSS File -->
-  <link href="<?= base_url() ?>/assets/template/assets/css/style.css" rel="stylesheet">
+  <link href="<?= base_url() ?>/assets/template/assets/css/style.css?v=<?= date('Y-m-d H:i:s'); ?>" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Medicio - v4.1.0
@@ -43,17 +47,20 @@ $site        = $konfigurasi->listing();
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-   <!-- jQuery -->
-<script src="<?= base_url() ?>/assets/admin/plugins/jquery/jquery.min.js"></script>
-<?= metatext(); ?>
+  <!-- jQuery -->
+  <script src="<?= base_url() ?>/assets/admin/plugins/jquery/jquery.min.js"></script>
+  <?= metatext(); ?>
   <style type="text/css" media="screen">
     .table {
       border: solid thin #EEE;
       border-collapse: collapse;
     }
-    .table td, .table th {
+
+    .table td,
+    .table th {
       border: solid thin #EEE;
     }
+
     .breadcrumbs {
       padding-top: 40px;
     }

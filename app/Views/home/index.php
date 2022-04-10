@@ -34,7 +34,6 @@ $layanan = $menu->layanan();
       } ?>
 
     </div>
-
     <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
       <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
     </a>
@@ -116,7 +115,6 @@ $layanan = $menu->layanan();
 
       <div class="row">
         <?php $ml = 1;
-
         foreach ($layanan as $layanan) { ?>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="<?= $ml; ?>00">
             <div class="icon"><i class="<?= $layanan['icon'] ?>"></i></div>

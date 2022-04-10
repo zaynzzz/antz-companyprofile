@@ -24,10 +24,10 @@ $menu_layanan = $menu->layanan();
 </div>
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top">
-  <div class="container d-flex align-items-center">
+<header id="header" class="fixed-top rounded-pill mt-2">
+  <div class="container d-flex align-items-center" id='mynav'>
 
-    <a href="index.html" class="logo me-auto"><img src="<?= base_url('assets/upload/image/' . $site['logo']) ?>" alt="<?= $site['namaweb'] ?>"></a>
+    <a href="index.html" class="logo me-auto fs-5  text-coral"><img src="<?= base_url('assets/upload/image/' . $site['logo']) ?>" alt="<?= $site['namaweb'] ?>"> <span class="mx-2 text-dark">Indonesia</span> </a>
     <!-- Uncomment below if you prefer to use an image logo -->
     <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 

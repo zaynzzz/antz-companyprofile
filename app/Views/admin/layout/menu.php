@@ -33,11 +33,11 @@ $users = db_connect()->query('SELECT * FROM users')->getRow();
     </div>
 
     <!-- Sidebar Menu -->
-    <nav class="mt-2">
+    <nav class="mt-2" id='mynav'>
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Dahboard -->
         <li class="nav-item">
-          <a href="<?= base_url('admin/dasbor') ?>" class="nav-link">
+          <a href="<?= base_url('admin/dasbor') ?>" class="nav-link active">
             <i class="nav-icon fas fa-th"></i>
             <p>Dashboard</p>
           </a>
@@ -296,3 +296,14 @@ $users = db_connect()->query('SELECT * FROM users')->getRow();
                   <button type="button" class="close" data-dismiss="alert"><span>×</span></button>
                 </div>
               <?php endif ?>
+              <script>
+                var header = document.getElementById("mynav");
+                var btns = header.getElementsByClassName("nav-link");
+                for (var i = 0; i < btns.length; i++) {
+                  btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                  });
+                }
+              </script>
