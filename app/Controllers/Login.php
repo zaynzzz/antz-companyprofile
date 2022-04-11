@@ -40,7 +40,7 @@ class Login extends BaseController
                 $this->session->set('nama', $user['nama']);
                 $this->session->setFlashdata('sukses', 'Hai ' . $user['nama'] . ', Anda berhasil login');
 
-                return redirect()->to(base_url('admin/dasbor'));
+                return redirect()->to(base_url('/Admin/Dashboard'));
             }
             // jika username password salah
             $this->session->setFlashdata('warning', 'Username atau password salah');
