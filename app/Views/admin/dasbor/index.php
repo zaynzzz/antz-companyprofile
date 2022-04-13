@@ -1,15 +1,16 @@
 <?php $session = \Config\Services::session();
+
 use App\Models\Dasbor_model;
 
 $m_dasbor = new Dasbor_model();
 ?>
 <div class="alert alert-info">
-	<h4>Hai <em class="text-warning"><?= $session->get('nama') ?></em></h4>
-	<hr>
-	<p>Selamat datang di website <strong><?= namaweb() ?></strong>. Website ini adalah sample hasil belajar di Java Web Media <a href="https://javawebmedia.com">www.javawebmedia.com</a>. Semoga bermanfaat yah.</p>
+  <h4>Hai <em class="text-warning"><?= $session->get('nama') ?></em></h4>
+  <hr>
+  <p>Selamat datang di website <strong><?= namaweb() ?></strong></p>
 </div>
 
- <!-- Info boxes -->
+<!-- Info boxes -->
 <div class="row">
   <div class="col-12 col-sm-6 col-md-3">
     <div class="info-box">
@@ -74,7 +75,7 @@ $m_dasbor = new Dasbor_model();
 <!-- /.row -->
 
 <div class="row">
-<!-- /.col -->
+  <!-- /.col -->
   <div class="col-12 col-sm-6 col-md-3">
     <div class="info-box mb-3">
       <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-download"></i></span>
