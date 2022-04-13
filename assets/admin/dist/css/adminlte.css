@@ -11998,7 +11998,7 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm .wrapper .main-sidebar .side
     z-index: 1035;
   }
   .layout-xl-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*="navbar"]) {
-    background-color: #343a40;
+    background-color: #100032;
   }
   .layout-xl-navbar-fixed .wrapper .sidebar-light-primary .brand-link:not([class*="navbar"]) {
     background-color: #fff;
@@ -12346,6 +12346,15 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
 .main-sidebar, .main-sidebar::before {
   transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
   width: 250px;
+  background-color: #fff;
+  bottom: 0;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  transition: left 0.5s ease-out;
+  width: 300px;
+  z-index: 10;
 }
 
 @media (prefers-reduced-motion: reduce) {
